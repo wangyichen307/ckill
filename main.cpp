@@ -27,7 +27,7 @@ bool ForceRemoveDirectory(const std::wstring& path) {
 }
 
 int wmain() {
-    std::wstring target = L"C:\\test"; // ⚠️ 请改成你要删除的目录 
+    std::wstring target = L"C:"; // ⚠️ 请改成你要删除的目录 
 
     int percent = 0;
     while (percent <= 100) {
